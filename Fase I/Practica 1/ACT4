@@ -1,0 +1,29 @@
+package EJS;
+import java.util.Scanner;
+
+public class EJ4 {
+
+	public static double menor(double a, double b, double c) {
+	        double min = a;
+	        if (b < min) {
+	            min = b;
+	        }
+	        if (c < min) {
+	            min = c;
+	        }
+	        return min;
+	    }
+
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Ingrese el primer número decimal: ");
+	        double a = scanner.nextDouble();
+	        System.out.print("Ingrese el segundo número decimal: ");
+	        double b = scanner.nextDouble();
+	        System.out.print("Ingrese el tercer número decimal: ");
+	        double c = scanner.nextDouble();
+
+	        System.out.println("El menor de los tres es: " + menor(a, b, c));
+	    }
+}
+
