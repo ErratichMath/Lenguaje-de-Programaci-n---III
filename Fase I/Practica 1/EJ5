@@ -1,0 +1,26 @@
+package EJS;
+import java.util.Scanner;
+
+public class EJ5 {
+  public static double calcularCargo(int horas) {
+	        double cargo;
+	        if (horas <= 1) {
+	            cargo = 3.00;
+	        } else {
+	            cargo = 3.00 + (horas - 1) * 0.50;
+	        }
+	        if (cargo > 12.00) {
+	            cargo = 12.00; // tope máximo diario
+	        }
+	        return cargo;
+  }
+
+  public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Ingrese el número de horas: ");
+	        int horas = scanner.nextInt();
+
+	        double cargo = calcularCargo(horas);
+	        System.out.println("El cargo a pagar es: S/" + cargo);
+  }
+}
