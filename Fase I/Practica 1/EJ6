@@ -1,0 +1,21 @@
+package EJS;
+import java.util.Scanner;
+
+public class EJ6 {
+   public static int convertirASegundos(int horas, int minutos, int segundos) {
+	        return horas * 3600 + minutos * 60 + segundos;
+   }
+
+   public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Ingrese horas: ");
+	        int horas = scanner.nextInt();
+	        System.out.print("Ingrese minutos: ");
+	        int minutos = scanner.nextInt();
+	        System.out.print("Ingrese segundos: ");
+	        int segundos = scanner.nextInt();
+
+	        int total = convertirASegundos(horas, minutos, segundos);
+	        System.out.println("Equivalente en segundos: " + total);
+   }
+}
