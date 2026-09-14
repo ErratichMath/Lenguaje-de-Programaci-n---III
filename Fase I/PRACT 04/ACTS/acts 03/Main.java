@@ -1,35 +1,45 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
-        CuentaCredito cuentaCredito = new CuentaCredito("001", "Juan Perez", 100.0, 300.0);
-        CuentaBancaria cuentaNormal = new CuentaBancaria("002", "Maria Lopez", 50.0);
+        ReporteTransacciones reporte = new ReporteTransacciones();
 
-        System.out.println("=== Prueba: retiro dentro del limite de credito ===");
+        CuentaBancaria cuentaSinMovimientos = new CuentaBancaria("001", "Juan Perez", 100.0);
+        CuentaBancaria cuentaConMovimientos = new CuentaBancaria("002", "Maria Lopez", 200.0);
+        cuentaConMovimientos.depositar(50.0);
+        cuentaConMovimientos.retirar(30.0);
+
+        System.out.println("=== Prueba: reporte de cuenta sin transacciones ===");
         try {
-            cuentaCredito.retirar(300.0);
-            System.out.println("Retiro exitoso, saldo actual: " + cuentaCredito.getSaldo());
-        } catch (LimiteCreditoExcedidoException e) {
+            reporte.generarReporte(cuentaSinMovimientos, "reporte_001.txt");
+        } catch (HistorialVacioException e) {
             System.out.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error de escritura: " + e.getMessage());
         }
 
-        System.out.println("\n=== Prueba: retiro que excede el limite de credito ===");
+        System.out.println("\n=== Prueba: reporte de cuenta con transacciones ===");
         try {
-            cuentaCredito.retirar(500.0);
-        } catch (LimiteCreditoExcedidoException e) {
+            reporte.generarReporte(cuentaConMovimientos, "reporte_002.txt");
+            System.out.println("Reporte generado correctamente en reporte_002.txt");
+        } catch (HistorialVacioException e) {
             System.out.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error de escritura: " + e.getMessage());
         }
 
-        System.out.println("\n=== Prueba: transferencia usando credito ===");
+        System.out.println("\n=== Prueba: lectura de reporte generado ===");
         try {
-            cuentaCredito.transferir(cuentaNormal, 200.0);
-            System.out.println("Transferencia exitosa, saldo cuentaCredito: " + cuentaCredito.getSaldo() + ", saldo cuentaNormal: " + cuentaNormal.getSaldo());
-        } catch (LimiteCreditoExcedidoException | SaldoInsuficienteException | CuentaNoEncontradaException e) {
-            System.out.println("Error: " + e.getMessage());
+            reporte.leerReporte("reporte_002.txt");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: archivo no encontrado");
         }
 
-        System.out.println("\n=== Prueba: cuenta sin limite de credito ===");
+        System.out.println("\n=== Prueba: lectura de archivo inexistente ===");
         try {
-            cuentaNormal.retirar(1000.0);
-        } catch (SaldoInsuficienteException e) {
+            reporte.leerReporte("archivo_que_no_existe.txt");
+        } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }

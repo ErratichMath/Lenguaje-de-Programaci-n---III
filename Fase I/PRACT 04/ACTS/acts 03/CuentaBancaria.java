@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class CuentaBancaria {
     protected String numeroCuenta;
     protected String titular;
     protected double saldo;
     protected boolean cerrada;
+    protected List<String> historialTransacciones;
 
     public CuentaBancaria(String numeroCuenta, String titular, double saldoInicial) {
         if (saldoInicial < 0) {
@@ -12,6 +16,7 @@ public class CuentaBancaria {
         this.titular = titular;
         this.saldo = saldoInicial;
         this.cerrada = false;
+        this.historialTransacciones = new ArrayList<>();
     }
 
     public void depositar(double monto) {
@@ -19,6 +24,7 @@ public class CuentaBancaria {
             throw new IllegalArgumentException("El monto a depositar debe ser positivo");
         }
         saldo += monto;
+        historialTransacciones.add("Deposito: " + monto);
     }
 
     public void retirar(double monto) {
@@ -29,6 +35,7 @@ public class CuentaBancaria {
             throw new SaldoInsuficienteException("Saldo insuficiente para retirar " + monto);
         }
         saldo -= monto;
+        historialTransacciones.add("Retiro: " + monto);
     }
 
     public void transferir(CuentaBancaria destino, double monto) {
@@ -37,6 +44,7 @@ public class CuentaBancaria {
         }
         this.retirar(monto);
         destino.depositar(monto);
+        historialTransacciones.add("Transferencia a " + destino.getNumeroCuenta() + ": " + monto);
     }
 
     public void cerrarCuenta() {
@@ -60,5 +68,9 @@ public class CuentaBancaria {
 
     public boolean isCerrada() {
         return cerrada;
+    }
+
+    public List<String> getHistorialTransacciones() {
+        return historialTransacciones;
     }
 }
