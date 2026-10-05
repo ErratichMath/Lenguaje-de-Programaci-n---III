@@ -1,0 +1,5 @@
+Actividad 1: pedidos de restaurante (MVC básico)
+
+Compilar y ejecutar (desde esta carpeta):
+  javac -encoding UTF-8 *.java
+  java Main
