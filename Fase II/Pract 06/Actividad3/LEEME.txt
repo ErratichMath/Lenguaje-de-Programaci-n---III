@@ -1,0 +1,5 @@
+Actividad 3: estado de pedidos + completar, filtrar por estado, pendientes e historial (incluye lo de la Actividad 2)
+
+Compilar y ejecutar (desde esta carpeta):
+  javac -encoding UTF-8 *.java
+  java Main

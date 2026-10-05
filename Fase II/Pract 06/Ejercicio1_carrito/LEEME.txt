@@ -1,0 +1,5 @@
+Ejercicio 1: carrito de compras
+
+Compilar y ejecutar (desde esta carpeta):
+  javac -encoding UTF-8 *.java
+  java Main

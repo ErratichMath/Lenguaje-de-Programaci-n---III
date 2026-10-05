@@ -1,0 +1,5 @@
+Ejercicio 3: jugador, enemigos y combate (ampliación del inventario)
+
+Compilar y ejecutar (desde esta carpeta):
+  javac -encoding UTF-8 *.java
+  java Main

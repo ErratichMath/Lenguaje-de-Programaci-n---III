@@ -1,0 +1,5 @@
+Ejercicio 2: gestión de inventario
+
+Compilar y ejecutar (desde esta carpeta):
+  javac -encoding UTF-8 *.java
+  java Main

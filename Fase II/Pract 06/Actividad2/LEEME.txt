@@ -1,0 +1,5 @@
+Actividad 2: tipo de plato + eliminar, actualizar, buscar y contar pedidos
+
+Compilar y ejecutar (desde esta carpeta):
+  javac -encoding UTF-8 *.java
+  java Main
