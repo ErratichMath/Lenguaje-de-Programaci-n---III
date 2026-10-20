@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Ejercicio1 {
 
-    private static final String URL = "jdbc:sqlite:tienda.db";
+    private static final String URL = "jdbc:sqlite:tienda_nueva.db";
     private static final String CLAVE = "1234";
     private static final Scanner sc = new Scanner(System.in);
 
