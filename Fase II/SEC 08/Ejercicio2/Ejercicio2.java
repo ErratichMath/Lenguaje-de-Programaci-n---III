@@ -1,3 +1,4 @@
+package Ejercicio2;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -21,8 +22,8 @@ import java.util.Scanner;
  */
 public class Ejercicio2 {
 
-    private static final String URL = "jdbc:sqlite:tienda.db";
-    private static final String CLAVE = "1234";
+	private static final String URL = "jdbc:sqlite:tienda_nueva.db";
+	private static final String CLAVE = "1234";
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -162,6 +163,7 @@ public class Ejercicio2 {
                 System.out.println("(la tabla está vacía)");
             }
         }
+        con.commit(); // termina la lectura y libera el bloqueo del archivo .db
     }
 
     // ---------------------------------------------------------------
@@ -169,6 +171,7 @@ public class Ejercicio2 {
     // ---------------------------------------------------------------
     private static void consultaAvanzada(Connection con, GestorProductos gestor) throws SQLException {
         gestor.cargar(con);
+        con.commit(); // libera el bloqueo de lectura del archivo .db
 
         System.out.println("Campos disponibles: id, nombre, categoria, precio");
         String campos = leerTexto("a) Campos a mostrar (separados por coma, vacío = todos): ");
@@ -240,5 +243,7 @@ public class Ejercicio2 {
                 System.out.println("Ingrese un número válido (use punto decimal).");
             }
         }
+    }
+}
     }
 }
