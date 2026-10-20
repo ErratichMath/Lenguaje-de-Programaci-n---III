@@ -152,6 +152,7 @@ public class Ejercicio1 {
                 System.out.println("(la tabla está vacía)");
             }
         }
+        con.commit(); // termina la lectura y libera el bloqueo del archivo .db
     }
 
     // ---------------------------------------------------------------
