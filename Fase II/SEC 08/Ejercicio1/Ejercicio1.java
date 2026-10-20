@@ -1,3 +1,4 @@
+package Ejercicio1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -181,5 +182,7 @@ public class Ejercicio1 {
                 System.out.println("Ingrese un número válido (use punto decimal).");
             }
         }
+    }
+}
     }
 }
