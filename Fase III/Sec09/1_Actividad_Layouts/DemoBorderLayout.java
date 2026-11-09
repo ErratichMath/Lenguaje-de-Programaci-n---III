@@ -7,7 +7,7 @@ public class DemoBorderLayout
    {
       MarcoBorderLayout marcoBorderLayout = new MarcoBorderLayout();
       marcoBorderLayout.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      marcoBorderLayout.setSize(450, 200);
+      marcoBorderLayout.setSize(750, 200);
       marcoBorderLayout.setVisible(true);
    }
 }

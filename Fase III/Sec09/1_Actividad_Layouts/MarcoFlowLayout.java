@@ -10,7 +10,7 @@ import javax.swing.JButton;
 public class MarcoFlowLayout extends JFrame
 {
    // *** CAMBIAR por los nombres de los integrantes del grupo ***
-   public static final String INTEGRANTES = "Integrante1, Integrante2, Integrante3";
+   public static final String INTEGRANTES = "Vilca Aragon Alexander Alexis, Ayerve Arenas Nicolas Matheus";
 
    private final JButton botonJButtonIzquierda; // alineación a la izquierda
    private final JButton botonJButtonCentro;    // alineación al centro

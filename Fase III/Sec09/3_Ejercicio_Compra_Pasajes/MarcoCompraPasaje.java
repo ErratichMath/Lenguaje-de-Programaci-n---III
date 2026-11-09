@@ -29,7 +29,7 @@ import javax.swing.SwingConstants;
 public class MarcoCompraPasaje extends JFrame
 {
    // *** CAMBIAR por los nombres de los integrantes del grupo ***
-   private static final String INTEGRANTES = "Integrante1, Integrante2, Integrante3";
+   private static final String INTEGRANTES = "Vilca Aragon Alexander Alexis, Ayerve Arenas Nicolas Matheus";
 
    private static final String[] CIUDADES =
       {"Arequipa", "Lima", "Cusco", "Tacna", "Puno", "Moquegua", "Ica", "Juliaca"};

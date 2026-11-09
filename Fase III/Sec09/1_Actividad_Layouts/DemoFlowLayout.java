@@ -7,7 +7,7 @@ public class DemoFlowLayout
    {
       MarcoFlowLayout marcoFlowLayout = new MarcoFlowLayout();
       marcoFlowLayout.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      marcoFlowLayout.setSize(450, 100); // ancho suficiente para ver el título
+      marcoFlowLayout.setSize(750, 100); // ancho suficiente para ver el título
       marcoFlowLayout.setVisible(true);
    }
 }

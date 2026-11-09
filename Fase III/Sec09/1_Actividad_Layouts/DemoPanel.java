@@ -7,7 +7,7 @@ public class DemoPanel
    {
       MarcoPanel marcoPanel = new MarcoPanel();
       marcoPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      marcoPanel.setSize(450, 200);
+      marcoPanel.setSize(750, 200);
       marcoPanel.setVisible(true);
    }
 }

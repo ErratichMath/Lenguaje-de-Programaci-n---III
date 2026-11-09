@@ -7,7 +7,7 @@ public class DemoGridLayout
    {
       MarcoGridLayout marcoGridLayout = new MarcoGridLayout();
       marcoGridLayout.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      marcoGridLayout.setSize(450, 200);
+      marcoGridLayout.setSize(750, 200);
       marcoGridLayout.setVisible(true);
    }
 }
